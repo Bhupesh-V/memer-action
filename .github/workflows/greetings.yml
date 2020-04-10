@@ -6,7 +6,7 @@ jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
-    - name: Create comment
+      - name: Create comment
         uses: jungwinter/comment@v1
         id: create
         with:
