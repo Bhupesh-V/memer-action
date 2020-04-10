@@ -6,6 +6,19 @@ jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@master
+      - name: Self test
+        id: selftest
+
+        # Put your action repo here
+        uses: Bhupesh-V/memer-action@master
+
+      - name: Check outputs
+        run: |
+          echo "${{ steps.selftest.outputs.meme }}"
+          echo "${{ steps.selftest.outputs.title }}"
+          echo "${{ steps.selftest.outputs.source }}"
+
       - name: Create comment
         uses: jungwinter/comment@v1
         id: create
