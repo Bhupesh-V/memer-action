@@ -25,7 +25,6 @@ jobs:
         with:
           issue-number: ${{ github.event.number }}
           body: |
-            This is a multi-line test comment
-            - With GitHub **Markdown**
-            - Created by [create-or-update-comment][1]
-            [1]: ${{ steps.selftest.outputs.source }}
+            Thanks for opening this PR 🤗, Pls wait while the maintainer(s) review it
+            Meanwhile have a look at this meme :)
+            ![meme](${{ steps.selftest.outputs.meme }})
