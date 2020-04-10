@@ -27,4 +27,4 @@ jobs:
           body: >
            Hello @${{ github.actor }}, thanks 🤗 for opening this PR! Pls wait while the maintainer(s) review it
            Meanwhile have a look at this meme :)
-           > ![meme](${{outputs.meme}})
+           > ![meme](${{meme}})
