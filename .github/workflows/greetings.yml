@@ -20,12 +20,12 @@ jobs:
           echo "${{ steps.selftest.outputs.source }}"
 
       - name: Create comment
-        uses: jungwinter/comment@v1
-        id: create
+        uses: peter-evans/create-or-update-comment@v1.3.0
+        id: couc
         with:
-          type: create
-          body: >
-           Hello @${{ github.actor }}, thanks 🤗 for opening this PR! Pls wait while the maintainer(s) review it
-           Meanwhile have a look at this meme :)
-           ![meme](${{ steps.selftest.outputs.meme }})
-          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.number }}
+          body: |
+            This is a multi-line test comment
+            - With GitHub **Markdown**
+            - Created by [create-or-update-comment][1]
+            [1]: ${{ steps.selftest.outputs.source }}
