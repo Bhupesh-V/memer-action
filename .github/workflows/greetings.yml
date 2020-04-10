@@ -26,5 +26,11 @@ jobs:
           issue-number: ${{ github.event.number }}
           body: |
             Thanks for opening this PR 🤗, Pls wait while the maintainer(s) review it
+
             Meanwhile have a look at this meme :)
+
+            > ${{ steps.selftest.outputs.title }}
             ![meme](${{ steps.selftest.outputs.meme }})
+            <sub><a href="${{ steps.selftest.outputs.meme }}">Source</a>
+
+            <p><a href="https://github.com/Bhupesh-V/memer-action">:star:  on github</a></p>
