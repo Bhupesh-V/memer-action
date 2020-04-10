@@ -27,5 +27,5 @@ jobs:
           body: >
            Hello @${{ github.actor }}, thanks 🤗 for opening this PR! Pls wait while the maintainer(s) review it
            Meanwhile have a look at this meme :)
-           > ![meme](${{ steps.selftest.outputs.meme }})
+           ![meme](${{ steps.selftest.outputs.meme }})
           token: ${{ secrets.GITHUB_TOKEN }}
