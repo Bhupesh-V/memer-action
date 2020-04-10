@@ -1,13 +1,27 @@
-import os
-import requests  # noqa We are just importing this to prove the dependency installed correctly
+import feedparser
+import random
+
+HOST_URL = "https://www.reddit.com/r/ProgrammerHumor.rss"
+
+
+def getMeme():
+    memelist = []
+    print("Memes from ProgrammerHumor")
+    f = feedparser.parse(HOST_URL)
+    for entry in f.entries:
+        x = entry['content'][0]['value']
+        print("Title: " + entry["title"])
+        print("Post: " + str(entry["link"]))
+        img = x[x.find("https://i.redd.it"): x.find("link") - 3]
+        print("Meme: " + img, end="\n")
+        memelist.append(img)
+        random.shuffle(memelist)
+        return memelist[0]
 
 
 def main():
-    my_input = os.environ["INPUT_MYINPUT"]
-
-    my_output = f"Hello {my_input}"
-
-    print(f"::set-output name=myOutput::{my_output}")
+    meme = getMeme()
+    print(f"::set-output name=meme::{meme}")
 
 
 if __name__ == "__main__":

@@ -1,13 +1,9 @@
-name: "Python Container Action Template"
-description: "Get started with Python Container actions"
-author: "Jacob Tomlinson"
-inputs:
-  myInput:
-    description: "Input to use"
-    default: "world"
+name: "Memer Action"
+description: "A GitHub Action that replies with r/ProgrammerHumor Memes on PRs"
+author: "Bhupesh Varshney"
 outputs:
-  myOutput:
-    description: "Output from the action"
+  meme:
+    description: "The meme image"
 runs:
   using: "docker"
   image: "Dockerfile"
