@@ -2,12 +2,10 @@
 
 [![Lint](https://github.com/Bhupesh-V/memer-action/workflows/Lint/badge.svg)](https://github.com/Bhupesh-V/memer-action/actions)
 [![Integration Test](https://github.com/Bhupesh-V/memer-action/workflows/Integration%20Test/badge.svg)](https://github.com/Bhupesh-V/memer-action/actions)
+<a href="https://twitter.com/bhupeshimself">
+  <img alt="Twitter: Bhupesh Varshney" src="https://img.shields.io/twitter/follow/bhupeshimself.svg?style=social" target="_blank" />
+</a>
 
-This is a template for creating GitHub actions and contains a small Python application which will be built into a minimal [Container Action](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-a-docker-container-action). Our final container from this template is ~50MB, yours may be a little bigger once you add some code. If you want something smaller check out my [go-container-action template](https://github.com/jacobtomlinson/go-container-action/actions).
-
-In `main.py` you will find a small example of accessing Action inputs and returning Action outputs. For more information on communicating with the workflow see the [development tools for GitHub Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/development-tools-for-github-actions).
-
-> 🏁 To get started, click the `Use this template` button on this repository [which will create a new repository based on this template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
 
 ## Usage
 
@@ -16,53 +14,52 @@ Describe how to use your action here.
 ### Example workflow
 
 ```yaml
-name: My Workflow
-on: [push, pull_request]
+name: Memer Workflow
+
+on: [pull_request]
+
 jobs:
-  build:
+  greeting:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Run action
+      - uses: actions/checkout@master
+      - name: Run Memer Action
+      - id: memer
 
-      # Put your action repo here
-      uses: me/myaction@master
+        uses: Bhupesh-V/memer-action@master
 
-      # Put an example of your mandatory inputs here
-      with:
-        myInput: world
+      - name: Check Outputs
+        run: |
+          echo "${{ steps.memer.outputs.meme }}"
+          echo "${{ steps.memer.outputs.title }}"
+          echo "${{ steps.memer.outputs.source }}"
+
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v1.3.0
+        id: couc
+        with:
+          issue-number: ${{ github.event.number }}
+          body: |
+            Thanks for opening this PR 🤗, Pls wait while the maintainer(s) review it
+
+            Meanwhile have a look at this meme :)
+
+            > ${{ steps.memer.outputs.title }}
+            ![meme](${{ steps.memer.outputs.meme }})
+            <sub><a href="${{ steps.memer.outputs.source }}">Source</a>
+
+            <p><a href="https://github.com/Bhupesh-V/memer-action">:star:  on github</a></p>
+
 ```
 
-### Inputs
-
-| Input                                             | Description                                        |
-|------------------------------------------------------|-----------------------------------------------|
-| `myInput`  | An example mandatory input    |
-| `anotherInput` _(optional)_  | An example optional input    |
 
 ### Outputs
 
-| Output                                             | Description                                        |
-|------------------------------------------------------|-----------------------------------------------|
-| `myOutput`  | An example output (returns 'Hello world')    |
+Memer Action sets 3 outputs.
 
-## Examples
-
-> NOTE: People ❤️ cut and paste examples. Be generous with them!
-
-### Using the optional input
-
-This is how to use the optional input.
-
-```yaml
-with:
-  myInput: world
-  anotherInput: optional
-```
-
-### Using outputs
-
-Show people how to use your outputs in another action.
+- `title`: The title of the post on reddit
+- `meme`: The meme image link
+- `source`: The Source of the post on reddit
 
 ```yaml
 steps:
@@ -70,15 +67,33 @@ steps:
 - name: Run action
   id: myaction
 
-  # Put your action name here
-  uses: me/myaction@master
+  uses: Bhupesh-V/memer-action@master
 
-  # Put an example of your mandatory arguments here
-  with:
-    myInput: world
-
-# Put an example of using your outputs here
 - name: Check outputs
     run: |
-    echo "Outputs - ${{ steps.myaction.outputs.myOutput }}"
+    echo "Outputs - ${{ steps.myaction.outputs.title }}"
+    echo "Outputs - ${{ steps.myaction.outputs.meme }}"
+    echo "Outputs - ${{ steps.myaction.outputs.source }}"
 ```
+
+
+## Author
+
+👤 **Bhupesh Varshney**
+
+- Twitter : [@bhupeshimself](https://twitter.com/bhupeshimself)
+- DEV : [bhupesh](https://dev.to/bhupesh)
+
+
+## ☺️ Show your support
+
+Support me by giving a ⭐️ if this project helped you! or just [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FBhupesh-V%2Ftil%2F)](https://twitter.com/intent/tweet?url=https://github.com/Bhupesh-V/til&text=til%20via%20@bhupeshimself)
+
+<a href="https://www.patreon.com/bhupesh">
+  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a>
+
+## 📝 License
+
+Copyright © 2020 [Bhupesh Varshney](https://github.com/Bhupesh-V).<br />
+This project is [MIT](https://github.com/Bhupesh-V/til/blob/master/LICENSE) licensed.
