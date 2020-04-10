@@ -14,3 +14,5 @@ jobs:
       - name: Check outputs
         run: |
           echo "${{ steps.selftest.outputs.meme }}"
+          echo "${{ steps.selftest.outputs.title }}"
+          echo "${{ steps.selftest.outputs.source }}"

@@ -2,6 +2,10 @@ name: "Memer Action"
 description: "A GitHub Action that replies with r/ProgrammerHumor Memes on PRs"
 author: "Bhupesh Varshney"
 outputs:
+  title:
+    description: "The Post Title"
+  source:
+    description: "The Source of the meme"
   meme:
     description: "The meme image"
 runs:
