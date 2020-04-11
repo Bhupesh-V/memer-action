@@ -1,6 +1,6 @@
 <p align="center">
   <h1 align="center">Memer Action</h1>
-  <img src="https://repository-images.githubusercontent.com/254587849/2ecaa500-7c03-11ea-806c-d14d8a389d9a" alt="memer-action-logo">
+  <a href=""><img src="images/header.png" alt="memer-action-logo" height="160"></a>
 </p>
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/memer-action?logo=GitHub)](https://github.com/Bhupesh-V/memer-action/releases) 
