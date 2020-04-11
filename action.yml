@@ -1,5 +1,5 @@
 name: "Memer Action"
-description: "A GitHub Action that replies with r/ProgrammerHumor Memes on PRs"
+description: "A GitHub Action for Programmer Memes"
 author: "Bhupesh Varshney"
 outputs:
   title:
@@ -11,3 +11,6 @@ outputs:
 runs:
   using: "docker"
   image: "Dockerfile"
+branding:
+  icon: 'wind'  
+  color: 'blue'

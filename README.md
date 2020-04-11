@@ -9,9 +9,9 @@
 
 ## Usage
 
-Describe how to use your action here.
-
 ### Example workflow
+
+You can use the following workflow as it is, just copy/paste in a file named `greetings.yml` inside your workflow folder.
 
 ```yaml
 name: Memer Workflow
@@ -40,18 +40,39 @@ jobs:
         with:
           issue-number: ${{ github.event.number }}
           body: |
-            Thanks for opening this PR 🤗, Pls wait while the maintainer(s) review it
+            🎉🎉 Thanks for opening this PR 🤗
+            Please wait while the maintainer(s) reviews it
 
-            Meanwhile have a look at this meme :)
+            Meanwhile have a look at this 😝 :
 
-            > ${{ steps.memer.outputs.title }}
-            ![meme](${{ steps.memer.outputs.meme }})
-            <sub><a href="${{ steps.memer.outputs.source }}">Source</a>
-
-            <p><a href="https://github.com/Bhupesh-V/memer-action">:star:  on github</a></p>
+            > **${{ steps.selftest.outputs.title }}**
+            ![meme](${{ steps.selftest.outputs.meme }})
+            <sub>ℹ️ <a href="${{ steps.selftest.outputs.source }}">Source</a> [ Powered By 🔥 <a href="https://github.com/Bhupesh-V/memer-action">Memer Action</a> ]</sub>
 
 ```
 
+### Inputs
+
+Memer Action accepts only 1 input.
+
+- `filter`: Sort Memes posts from reddit. Only 4 values are acceptable, **hot**, **top**, **new** & **rising**.
+
+```yaml
+steps:
+- uses: actions/checkout@master
+- name: Run action
+  id: myaction
+
+  uses: Bhupesh-V/memer-action@master
+  with:
+    filter: new
+
+- name: Check outputs
+    run: |
+    echo "Outputs - ${{ steps.myaction.outputs.title }}"
+    echo "Outputs - ${{ steps.myaction.outputs.meme }}"
+    echo "Outputs - ${{ steps.myaction.outputs.source }}"
+```
 
 ### Outputs
 
@@ -59,7 +80,7 @@ Memer Action sets 3 outputs.
 
 - `title`: The title of the post on reddit
 - `meme`: The meme image link
-- `source`: The Source of the post on reddit
+- `source`: The Source of the Meme (post on reddit)
 
 ```yaml
 steps:
