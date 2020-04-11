@@ -10,10 +10,9 @@ jobs:
       - name: Self test
         id: selftest
 
-        # Put your action repo here
         uses: Bhupesh-V/memer-action@master
         with:
-          filter: new
+          filter: "new"
 
       - name: Check outputs
         run: |
@@ -30,7 +29,7 @@ jobs:
             🎉🎉 Thanks for opening this PR 🤗
             Please wait while the maintainer(s) reviews it
 
-            Meanwhile have a look at this 😝 :
+            Meanwhile have a look at this meme 😝 :
 
             > **${{ steps.selftest.outputs.title }}**
             ![meme](${{ steps.selftest.outputs.meme }})
