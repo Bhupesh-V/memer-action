@@ -1,5 +1,6 @@
 <p align="center">
   <h1 align="center">Memer Action</h1>
+  <img src="https://repository-images.githubusercontent.com/254587849/2ecaa500-7c03-11ea-806c-d14d8a389d9a" alt="memer-action-logo">
 </p>
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/memer-action?logo=GitHub)](https://github.com/Bhupesh-V/memer-action/releases) 
@@ -14,7 +15,7 @@
 
 ### Example workflow
 
-You can use the following workflow as it is, just copy/paste in a file named `greetings.yml` inside your workflow folder.
+You can use the following workflow as it is, just copy/paste in a file named `greetings.yml` inside your [workflows](https://github.com/Bhupesh-V/memer-action/tree/master/.github/workflows) folder.
 
 ```yaml
 name: Memer Workflow
@@ -50,9 +51,9 @@ jobs:
 
             Meanwhile have a look at this 😝 :
 
-            > **${{ steps.selftest.outputs.title }}**
-            ![meme](${{ steps.selftest.outputs.meme }})
-            <sub>ℹ️ <a href="${{ steps.selftest.outputs.source }}">Source</a> [ Powered By 🔥 <a href="https://github.com/Bhupesh-V/memer-action">Memer Action</a> ]</sub>
+            > **${{ steps.memer.outputs.title }}**
+            ![meme](${{ steps.memer.outputs.meme }})
+            <sub>ℹ️ <a href="${{ steps.memer.outputs.source }}">Source</a> [ Powered By 🔥 <a href="https://github.com/Bhupesh-V/memer-action">Memer Action</a> ]</sub>
 
 ```
 
@@ -116,7 +117,7 @@ steps:
 
 ## ☺️ Show your support
 
-Support me by giving a ⭐️ if this project helped you! or just [![Twitter URL](https://img.shields.io/twitter/url?label=Tweet%20Memer%20Action&logoColor=blue&style=social&url=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Furl%3Dhttps%3A%2F%2Fgithub.com%2FBhupesh-V%2Fmemer-action%26text%3DA%2520GitHub%2520Action%2520for%2520programmer%2520memes%2520%3B%29)](https://twitter.com/intent/tweet?url=https://github.com/Bhupesh-V/memer-action&text=A%20GitHub%20Action%20for%20programmer%20memes%20;))
+Support me by giving a ⭐️ if this project helped you! or just [![Twitter URL](https://img.shields.io/twitter/url?label=Tweet%20Memer%20Action&logoColor=blue&style=social&url=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Furl%3Dhttps%3A%2F%2Fgithub.com%2FBhupesh-V%2Fmemer-action%26text%3DA%2520GitHub%2520Action%2520for%2520programmer%2520memes%2520%3B%29)](https://twitter.com/intent/tweet?url=https://github.com/Bhupesh-V/memer-action&text=A%20GitHub%20Action%20for%20programmer%20memes)
 
 <a href="https://www.patreon.com/bhupesh">
   <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
@@ -125,4 +126,4 @@ Support me by giving a ⭐️ if this project helped you! or just [![Twitter URL
 ## 📝 License
 
 Copyright © 2020 [Bhupesh Varshney](https://github.com/Bhupesh-V).<br />
-This project is [MIT](https://github.com/Bhupesh-V/til/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/Bhupesh-V/memer-action/blob/master/LICENSE) licensed.
