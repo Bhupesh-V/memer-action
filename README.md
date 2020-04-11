@@ -1,7 +1,10 @@
-# Memer Action
+<p align="center">
+  <h1 align="center">Memer Action</h1>
+</p>
 
-[![Lint](https://github.com/Bhupesh-V/memer-action/workflows/Lint/badge.svg)](https://github.com/Bhupesh-V/memer-action/actions)
-[![Integration Test](https://github.com/Bhupesh-V/memer-action/workflows/Integration%20Test/badge.svg)](https://github.com/Bhupesh-V/memer-action/actions)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/bhupesh-v/memer-action?logo=GitHub)](https://github.com/Bhupesh-V/memer-action/releases) 
+[![Lint](https://github.com/Bhupesh-V/memer-action/workflows/Lint/badge.svg?branch=master)](https://github.com/Bhupesh-V/memer-action/actions?query=workflow%3ALint)
+[![Integration Test](https://github.com/Bhupesh-V/memer-action/workflows/Integration%20Test/badge.svg?branch=master)](https://github.com/Bhupesh-V/memer-action/actions?query=workflow%3A%22Integration+Test%22)
 <a href="https://twitter.com/bhupeshimself">
   <img alt="Twitter: Bhupesh Varshney" src="https://img.shields.io/twitter/follow/bhupeshimself.svg?style=social" target="_blank" />
 </a>
@@ -27,6 +30,8 @@ jobs:
       - id: memer
 
         uses: Bhupesh-V/memer-action@master
+        with:
+          filter: "new"
 
       - name: Check Outputs
         run: |
@@ -105,10 +110,13 @@ steps:
 - Twitter : [@bhupeshimself](https://twitter.com/bhupeshimself)
 - DEV : [bhupesh](https://dev.to/bhupesh)
 
+## 💙 Credits
+- [create-or-update-comment](https://github.com/peter-evans/create-or-update-comment)
+- [python-container-action](https://github.com/jacobtomlinson/python-container-action)
 
 ## ☺️ Show your support
 
-Support me by giving a ⭐️ if this project helped you! or just [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FBhupesh-V%2Ftil%2F)](https://twitter.com/intent/tweet?url=https://github.com/Bhupesh-V/til&text=til%20via%20@bhupeshimself)
+Support me by giving a ⭐️ if this project helped you! or just [![Twitter URL](https://img.shields.io/twitter/url?label=Tweet%20Memer%20Action&logoColor=blue&style=social&url=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Furl%3Dhttps%3A%2F%2Fgithub.com%2FBhupesh-V%2Fmemer-action%26text%3DA%2520GitHub%2520Action%2520for%2520programmer%2520memes%2520%3B%29)](https://twitter.com/intent/tweet?url=https://github.com/Bhupesh-V/memer-action&text=A%20GitHub%20Action%20for%20programmer%20memes%20;))
 
 <a href="https://www.patreon.com/bhupesh">
   <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
