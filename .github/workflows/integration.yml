@@ -11,7 +11,7 @@ jobs:
         # Put your action repo here
         uses: Bhupesh-V/memer-action@master
         with:
-          filter: new
+          filter: "new"
 
       - name: Check outputs
         run: |

@@ -23,7 +23,7 @@ def getMeme(filter_posts="hot"):
 
 
 def main():
-    filter_by = os.environ["filter"]
+    filter_by = os.environ["INPUT_FILTER"]
     if filter_by not in ["hot", "top", "new", "rising"]:
         sys.exit(0)
     meme = getMeme(filter_by)
