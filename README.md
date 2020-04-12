@@ -13,12 +13,16 @@
   <img alt="Twitter: Bhupesh Varshney" src="https://img.shields.io/twitter/follow/bhupeshimself.svg?style=social" target="_blank" />
 </a>
 
+## ✨ Demo
 
-## Usage
+![demomemer](https://user-images.githubusercontent.com/34342551/79064573-a6fa9e80-7cc7-11ea-895e-6538c2b8548b.png)
+
+## ❓ Usage
 
 ### Example workflow
 
-You can use the following workflow as it is, just copy/paste in a file named `greetings.yml` inside your [workflows](https://github.com/Bhupesh-V/memer-action/tree/master/.github/workflows) folder.
+- You can use the following workflow as it is, just copy/paste in a file named `greetings.yml` inside your [workflows](https://github.com/Bhupesh-V/memer-action/tree/master/.github/workflows) folder.
+- The reply action is performed by [create-or-update-comment](https://github.com/peter-evans/create-or-update-comment)
 
 ```yaml
 name: Memer Workflow
