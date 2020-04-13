@@ -15,4 +15,4 @@ jobs:
       - name: Lint
         run: |
           pip install flake8
-          flake8 main.py
+          flake8 main.py --ignore=E501

@@ -1,13 +1,17 @@
 name: "Memer Action"
 description: "A GitHub Action for Programmer Memes"
 author: "Bhupesh Varshney"
+inputs:
+  filter:
+    description: "Sort posts on reddit by (hot, new, top & rising) by default hot"
+    required: false
 outputs:
   title:
     description: "The Post Title"
   source:
     description: "The Source of the meme"
   meme:
-    description: "The meme image"
+    description: "The Meme Image"
 runs:
   using: "docker"
   image: "Dockerfile"

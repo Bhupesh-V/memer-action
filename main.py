@@ -11,8 +11,10 @@ def getMeme(filter_posts="hot"):
     memedict = {}
     f = feedparser.parse(f"{HOST_URL}/{filter_posts}.rss")
     for entry in f.entries:
-        x = entry['content'][0]['value']
-        img = x[x.find("https://i.redd.it"): x.find("link") - 3]
+        post_content = entry["content"][0]["value"]
+        img = post_content[
+            post_content.find("https://i.redd.it"): post_content.find("link") - 3
+        ]
         if img != "":
             memedict["title"] = entry["title"]
             memedict["src"] = str(entry["link"])
