@@ -126,6 +126,7 @@ steps:
 
 Support me by giving a ⭐️ if this project helped you! or just [![Twitter URL](https://img.shields.io/twitter/url?label=Tweet%20Memer%20Action&logoColor=blue&style=social&url=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Furl%3Dhttps%3A%2F%2Fgithub.com%2FBhupesh-V%2Fmemer-action%26text%3DA%2520GitHub%2520Action%2520for%2520programmer%2520memes%2520%3B%29)](https://twitter.com/intent/tweet?url=https://github.com/Bhupesh-V/memer-action&text=A%20GitHub%20Action%20for%20programmer%20memes)
 
+<a href="https://liberapay.com/bhupesh/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 <a href="https://www.patreon.com/bhupesh">
   <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
 </a>
