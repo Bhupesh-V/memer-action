@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Run Memer Action
-      - id: memer
+        id: memer
 
         uses: Bhupesh-V/memer-action@master
         with:
