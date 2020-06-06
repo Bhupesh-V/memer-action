@@ -21,7 +21,7 @@ jobs:
           echo "${{ steps.selftest.outputs.source }}"
 
       - name: Create comment
-        uses: peter-evans/create-or-update-comment@v1.3.0
+        uses: peter-evans/create-or-update-comment@v1.4.2
         id: couc
         with:
           issue-number: ${{ github.event.number }}
