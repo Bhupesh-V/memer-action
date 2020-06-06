@@ -110,6 +110,8 @@ steps:
     echo "Outputs - ${{ steps.myaction.outputs.source }}"
 ```
 
+Note: This action does not work in `pull_request` workflows when triggered by a fork opening a pull request in the upstream repository.
+This is due to restrictions put in place by GitHub Actions. See [here](https://github.com/peter-evans/create-pull-request/blob/master/docs/concepts-guidelines.md#restrictions-on-forked-repositories) for further explanation.
 
 ## Author
 
