@@ -53,8 +53,8 @@ jobs:
         with:
           issue-number: ${{ github.event.number }}
           body: |
-            🎉🎉 Thanks for opening this PR 🤗
-            Please wait while the maintainer(s) reviews it
+            🎉🎉 Thanks for opening this PR/Issue 🤗
+            Please wait while the maintainer(s) review it
 
             Meanwhile have a look at this 😝 :
 
@@ -69,6 +69,7 @@ jobs:
 Memer Action accepts only 1 input.
 
 - `filter`: Sort Memes posts from reddit. Only 4 values are acceptable, **hot**, **top**, **new** & **rising**.
+By default the memes are "hot".
 
 ```yaml
 steps:

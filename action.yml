@@ -9,9 +9,9 @@ outputs:
   title:
     description: "The Post Title"
   source:
-    description: "The Source of the meme"
+    description: "The Source of the meme, Reddit Post Link"
   meme:
-    description: "The Meme Image"
+    description: "The Meme Image Link"
 runs:
   using: "docker"
   image: "Dockerfile"

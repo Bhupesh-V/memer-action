@@ -24,9 +24,9 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+ - OS: [e.g. Ubuntu]
+ - Python Version [e.g. 3.8]
+ - Memer Action Version [e.g. 0.2.0]
 
 **Additional context**
 Add any other context about the problem here.

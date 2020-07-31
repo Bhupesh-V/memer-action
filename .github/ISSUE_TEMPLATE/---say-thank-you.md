@@ -14,6 +14,6 @@ You can help me in any way possible
 - [ ] Give the repository a star ⭐️.
 - [ ] Help out with issues.
 - [ ] Share it with others.
-- [ ] Support me on [Patreon](https://www.patreon.com/bePatron?u=18082750).
+- [ ] Buy me a [ko-fi](https://ko-fi.com/bhupesh).
 
 Thank you! 💐

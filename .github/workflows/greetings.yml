@@ -6,7 +6,7 @@ jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Self test
         id: selftest
 
@@ -26,8 +26,8 @@ jobs:
         with:
           issue-number: ${{ github.event.number }}
           body: |
-            🎉🎉 Thanks for opening this PR 🤗
-            Please wait while the maintainer(s) reviews it
+            🎉🎉 Thanks for opening this PR/Issue 🤗
+            Please wait while the maintainer(s) review it
 
             Meanwhile have a look at this meme 😝 :
 
