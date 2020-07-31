@@ -7,7 +7,7 @@ SUB_URL = "https://www.reddit.com/r/ProgrammerHumor"
 FALLBACK = {
     "meme_link": "https://raw.githubusercontent.com/Bhupesh-V/memer-action/master/images/header.png",
     "title": "Oops :( looks we are out of memes.",
-    "src": "https://github.com/Bhupesh-V/memer-action"
+    "src": "https://github.com/Bhupesh-V/memer-action",
 }
 
 
@@ -18,7 +18,7 @@ def getMeme(filter_posts="hot"):
     for entry in f.entries:
         post_content = entry["content"][0]["value"]
         img = post_content[
-            post_content.find("https://i.redd.it"): post_content.find("link") - 3
+            post_content.find("https://i.redd.it") : post_content.find("link") - 3
         ]
         if img != "":
             memedict["title"] = entry["title"]
