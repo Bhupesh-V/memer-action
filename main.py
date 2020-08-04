@@ -2,6 +2,7 @@ import feedparser
 import random
 import os
 import sys
+import json
 
 SUB_URL = "https://www.reddit.com/r/ProgrammerHumor"
 FALLBACK = {
@@ -28,8 +29,16 @@ def getMeme(filter_posts="hot"):
 
     if len(memelist) != 0:
         random.shuffle(memelist)
+    elif os.environ["INPUT_FALLBACK"]:
+        fallback_dict = json.loads(os.environ["INPUT_FALLBACK"])
+        if FALLBACK.keys() == fallback_dict.keys():
+            memelist.append(fallback_dict)
+        else:
+            print("Key Error, make sure keys are", FALLBACK.keys())
+            sys.exit(0)
     else:
         memelist.append(FALLBACK)
+
     return memelist[0]
 
 
