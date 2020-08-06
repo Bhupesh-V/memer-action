@@ -66,10 +66,10 @@ jobs:
 
 ### Inputs
 
-Memer Action accepts only 1 input.
+Memer Action accepts following input variables.
 
-- `filter`: Sort Memes posts from reddit. Only 4 values are acceptable, **hot**, **top**, **new** & **rising**.
-By default the memes are "hot".
+- `filter` (optional) : Sort Memes posts from reddit. Only 4 values are acceptable, **hot**, **top**, **new** & **rising**. By default the memes are "hot".
+- `fallback` (optional) : A JSON string for showing a Fallback meme, in case there are no memes available.
 
 ```yaml
 steps:
@@ -80,6 +80,7 @@ steps:
   uses: Bhupesh-V/memer-action@master
   with:
     filter: new
+    fallback: '{"meme_link":"<meme-url>", "title": "<meme-title>", "src": "<meme-source-url>"}'
 
 - name: Check outputs
     run: |
@@ -118,6 +119,7 @@ This is due to restrictions put in place by GitHub Actions. See [here](https://g
 
 👤 **Bhupesh Varshney**
 
+- Web : [bhupesh.codes](https://bhupesh-v.github.io)
 - Twitter : [@bhupeshimself](https://twitter.com/bhupeshimself)
 - DEV : [bhupesh](https://dev.to/bhupesh)
 
