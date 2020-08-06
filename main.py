@@ -7,7 +7,7 @@ import json
 SUB_URL = "https://www.reddit.com/r/ProgrammerHumor"
 FALLBACK = {
     "meme_link": "https://raw.githubusercontent.com/Bhupesh-V/memer-action/master/images/header.png",
-    "title": "Oops :( looks we are out of memes.",
+    "title": "Oops :( looks like we are out of memes.",
     "src": "https://github.com/Bhupesh-V/memer-action",
 }
 
