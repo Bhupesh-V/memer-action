@@ -1,6 +1,6 @@
 # Contributing to Memer Action xD
 
-:tada: First off, thanks for taking the time to contribute! :tada:
+:tada: First of all, thanks for taking the time to contribute! :tada:
 
 Make sure you follow below guidelines before contributing.
 
