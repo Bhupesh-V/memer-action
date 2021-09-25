@@ -11,6 +11,27 @@ FALLBACK = {
     "src": "https://github.com/Bhupesh-V/memer-action",
 }
 
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36",
+    "Content-Type": "application/json",
+}
+
+def request(url, data=None, method=None):
+    if method == "PATCH":
+        req = urllib.request.Request(url, data=data, headers=HEADERS)
+        req.get_method = lambda: "PATCH"
+    elif method == "POST":
+        req = urllib.request.Request(url, data=data, headers=HEADERS)
+    else:
+        req = urllib.request.Request(url, headers=HEADERS)
+    try:
+        with urllib.request.urlopen(req) as response:
+            res = json.loads(response.read().decode("utf-8"))
+            print(response.code)
+    except urllib.error.URLError as e:
+        print(e.reason)
+        exit()
+    return res
 
 def getMeme(filter_posts="hot"):
     memelist = []
@@ -18,6 +39,8 @@ def getMeme(filter_posts="hot"):
     print(filter_posts)
     print(SUB_URL)
     f = feedparser.parse(f"{SUB_URL}/{filter_posts}.rss")
+    print(request(SUB_URL))
+
     print(len(f.entries))
     for entry in f.entries:
         post_content = entry["content"][0]["value"]
