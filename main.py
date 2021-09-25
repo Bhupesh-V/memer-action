@@ -3,6 +3,7 @@ import random
 import os
 import sys
 import json
+import urllib
 
 SUB_URL = "https://www.reddit.com/r/ProgrammerHumor"
 FALLBACK = {
@@ -26,7 +27,7 @@ def request(url, data=None, method=None):
         req = urllib.request.Request(url, headers=HEADERS)
     try:
         with urllib.request.urlopen(req) as response:
-            res = json.loads(response.read().decode("utf-8"))
+            res = response.read().decode("utf-8")
             print(response.code)
     except urllib.error.URLError as e:
         print(e.reason)
