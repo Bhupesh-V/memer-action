@@ -15,6 +15,8 @@ FALLBACK = {
 def getMeme(filter_posts="hot"):
     memelist = []
     memedict = {}
+    print(filter_posts)
+    print(SUB_URL)
     f = feedparser.parse(f"{SUB_URL}/{filter_posts}.rss")
     print(len(f.entries))
     for entry in f.entries:
