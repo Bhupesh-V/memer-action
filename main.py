@@ -16,6 +16,7 @@ def getMeme(filter_posts="hot"):
     memelist = []
     memedict = {}
     f = feedparser.parse(f"{SUB_URL}/{filter_posts}.rss")
+    print(len(f.entries))
     for entry in f.entries:
         post_content = entry["content"][0]["value"]
         img = post_content[
