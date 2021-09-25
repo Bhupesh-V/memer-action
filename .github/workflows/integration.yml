@@ -8,7 +8,7 @@ jobs:
       - name: Self test
         id: selftest
 
-        uses: Bhupesh-V/memer-action@master
+        uses: Bhupesh-V/memer-action@dev
         with:
           filter: "new"
 
