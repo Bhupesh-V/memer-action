@@ -37,10 +37,11 @@ def request(url, data=None, method=None):
 def getMeme(filter_posts="hot"):
     memelist = []
     memedict = {}
-    print(filter_posts)
-    print(SUB_URL)
+# print(filter_posts)
+# print(SUB_URL)
     f = feedparser.parse(f"{SUB_URL}/{filter_posts}.rss")
-    print(request("https://jsonplaceholder.typicode.com/todos/1"))
+    print(f.status)
+# print(request("https://jsonplaceholder.typicode.com/todos/1"))
 
     print(len(f.entries))
     for entry in f.entries:
