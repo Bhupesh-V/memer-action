@@ -70,7 +70,8 @@ def getMeme(filter_posts="hot"):
 
 
 def main():
-    filter_by = os.environ["INPUT_FILTER"]
+    filter_by = "new"
+    print(feedparser.__version__)
     if filter_by not in ["hot", "top", "new", "rising"]:
         print("filter must be one of hot, top, new or rising")
         sys.exit(0)
