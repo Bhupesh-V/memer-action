@@ -27,7 +27,7 @@ def request(url, data=None, method=None):
         req = urllib.request.Request(url, headers=HEADERS)
     try:
         with urllib.request.urlopen(req) as response:
-            res = response.read().decode("utf-8")
+            res = json.loads(response.read().decode("utf-8"))
             print(response.code)
     except urllib.error.URLError as e:
         print(e.reason)
@@ -40,7 +40,7 @@ def getMeme(filter_posts="hot"):
     print(filter_posts)
     print(SUB_URL)
     f = feedparser.parse(f"{SUB_URL}/{filter_posts}.rss")
-    print(request(SUB_URL))
+    print(request("https://jsonplaceholder.typicode.com/todos/1"))
 
     print(len(f.entries))
     for entry in f.entries:
