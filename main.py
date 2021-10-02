@@ -17,31 +17,38 @@ HEADERS = {
     "Content-Type": "application/json",
 }
 
+
+NS = {"ns": "http://www.w3.org/2005/Atom"}
+
 def request(url, data=None, method=None):
-    if method == "PATCH":
-        req = urllib.request.Request(url, data=data, headers=HEADERS)
-        req.get_method = lambda: "PATCH"
-    elif method == "POST":
-        req = urllib.request.Request(url, data=data, headers=HEADERS)
-    else:
-        req = urllib.request.Request(url, headers=HEADERS)
+    req = urllib.request.Request(url, headers=HEADERS)
     try:
         with urllib.request.urlopen(req) as response:
-            res = json.loads(response.read().decode("utf-8"))
-            print(response.code)
+            res = response.read().decode("utf-8")
     except urllib.error.URLError as e:
         print(e.reason)
         exit()
     return res
 
+
+data = request(f"{SUB_URL}/new.rss")
+tree = ET.fromstring(data)
+entries = tree.findall("ns:entry", namespaces=NS)
+
+
+for e in entries:
+    title = e.find("ns:title", namespaces=NS).text
+    content = e.find("ns:content", namespaces=NS).text
+    img = content[
+        content.find("https://i.redd.it") : content.find("link") - 3
+    ]
+    print(title, link)
+
 def getMeme(filter_posts="hot"):
     memelist = []
     memedict = {}
-# print(filter_posts)
-# print(SUB_URL)
     f = feedparser.parse(f"{SUB_URL}/{filter_posts}.rss")
     print(f.status)
-# print(request("https://jsonplaceholder.typicode.com/todos/1"))
 
     print(len(f.entries))
     for entry in f.entries:
