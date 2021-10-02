@@ -31,18 +31,19 @@ def request(url, data=None, method=None):
     return res
 
 
-data = request(f"{SUB_URL}/new.rss")
-tree = ET.fromstring(data)
-entries = tree.findall("ns:entry", namespaces=NS)
+def parseXML():
+    data = request(f"{SUB_URL}/new.rss")
+    tree = ET.fromstring(data)
+    entries = tree.findall("ns:entry", namespaces=NS)
 
 
-for e in entries:
-    title = e.find("ns:title", namespaces=NS).text
-    content = e.find("ns:content", namespaces=NS).text
-    img = content[
-        content.find("https://i.redd.it") : content.find("link") - 3
-    ]
-    print(title, link)
+    for e in entries:
+        title = e.find("ns:title", namespaces=NS).text
+        content = e.find("ns:content", namespaces=NS).text
+        img = content[
+            content.find("https://i.redd.it") : content.find("link") - 3
+        ]
+        print(title, link)
 
 def getMeme(filter_posts="hot"):
     memelist = []
@@ -80,6 +81,7 @@ def getMeme(filter_posts="hot"):
 def main():
     filter_by = "new"
     print(feedparser.__version__)
+    parseXML()
     if filter_by not in ["hot", "top", "new", "rising"]:
         print("filter must be one of hot, top, new or rising")
         sys.exit(0)
