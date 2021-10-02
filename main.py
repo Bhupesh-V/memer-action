@@ -85,7 +85,7 @@ def main():
     if filter_by not in ["hot", "top", "new", "rising"]:
         print("filter must be one of hot, top, new or rising")
         sys.exit(0)
-    meme = getMeme(filter_by)
+# meme = getMeme(filter_by)
     print(f"::set-output name=meme::{meme['meme_link']}")
     print(f"::set-output name=title::{meme['title']}")
     print(f"::set-output name=source::{meme['src']}")
