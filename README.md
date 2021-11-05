@@ -70,7 +70,7 @@ Memer Action accepts following input variables.
 
 - `filter` (optional) : Sort Memes posts from reddit. Only 4 values are acceptable, **hot**, **top**, **new** & **rising**. By default the memes are "hot".
 - `fallback` (optional) : A JSON string for showing a Fallback meme, in case there are no memes available. By default the fallback output is
-```json
+```python
 FALLBACK = {
     "meme_link": "https://raw.githubusercontent.com/Bhupesh-V/memer-action/master/images/header.png",
     "title": "Oops :( looks like we are out of memes.",
