@@ -122,14 +122,6 @@ steps:
 Note: This action does not work in `pull_request` workflows when triggered by a fork opening a pull request in the upstream repository.
 This is due to restrictions put in place by GitHub Actions. See [here](https://github.com/peter-evans/create-pull-request/blob/master/docs/concepts-guidelines.md#restrictions-on-forked-repositories) for further explanation.
 
-## Author
-
-👤 **Bhupesh Varshney**
-
-- Web : [bhupesh.codes](https://bhupesh-v.github.io)
-- Twitter : [@bhupeshimself](https://twitter.com/bhupeshimself)
-- DEV : [bhupesh](https://dev.to/bhupesh)
-
 ## 💙 Credits
 - [create-or-update-comment](https://github.com/peter-evans/create-or-update-comment)
 - [python-container-action](https://github.com/jacobtomlinson/python-container-action)
